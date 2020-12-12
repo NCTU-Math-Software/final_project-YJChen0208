@@ -14,9 +14,9 @@
 The output is the x y array that can be plot to display "READY?".
 
 About input :
-    - Input h is the height of a word, it must be divided by 12.
-    - Input w is the width of a word, it must be divided by 2.
-    - Input gap is the gap between each words, it has no restriction.
+- Input h is the height of a word, it must be divided by 12.
+- Input w is the width of a word, it must be divided by 2.
+- Input gap is the gap between each words, it has no restriction.
 
 The total width of "READY?" is (w+gap)*5+w.
 
@@ -35,9 +35,9 @@ plot(x, y, '.r');
 The output is the x y array that can be plot to display "GO!".
 
 About input :
-    - Input h is the height of a word, it must be divided by 12.
-    - Input w is the width of a word, it must be divided by 2.
-    - Input gap is the gap between each words, it has no restriction.
+- Input h is the height of a word, it must be divided by 12.
+- Input w is the width of a word, it must be divided by 2.
+- Input gap is the gap between each words, it has no restriction.
 
 The total width of "GO!" is (w+gap)*2.
 
@@ -53,10 +53,11 @@ plot(x, y, '.r');
 ```
 ### gameover.m
 The output is the x y array that can be plot to display "GAMEOVER".
+
 About input :
-    - Input h is the height of a word, it must be divided by 2.
-    - Input w is the width of a word, it must be divided by 2.
-    - Input gap is the gap between each words, it has no restriction.
+- Input h is the height of a word, it must be divided by 2.
+- Input w is the width of a word, it must be divided by 2.
+- Input gap is the gap between each words, it has no restriction.
 
 The total width of "GAMEOVER!" is (w+gap)*7+w.
 
