@@ -6,28 +6,39 @@ function kpfcn(fig,event, keyData)
 %     disp(event.Key)
     global direc;
     global stop;
+    global dirset;
     
     switch event.Key
         case 'uparrow'
-            if direc ~= 2 
+            if direc ~= 2 && dirset == 0
                 direc = 1;
+                dirset = 1;
             end
         case 'downarrow'
-            if direc ~= 1
+            if direc ~= 1 && dirset == 0
                 direc = 2;
+                dirset = 1;
             end
         case 'leftarrow'
-            if direc ~= 4
+            if direc ~= 4 && dirset == 0
                 direc = 3;
+                dirset = 1;
             end
         case 'rightarrow'
-            if direc ~= 3
+            if direc ~= 3 && dirset == 0
                 direc = 4;
+                dirset = 1;
             end
         case 'c'
-            direc = -1;
+            if dirset == 0
+                direc = -1;
+                dirset = 1;
+            end
         case 'space'
-            stop = 1;
+            if dirset == 0
+                stop = 1;
+                dirset = 1;
+            end
    end
     
 end
