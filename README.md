@@ -8,7 +8,7 @@
 4. Press `left mouse` and start playing, or press `right mouse` to exit.
 5. while playing :
     - You can use `arrow key` to control the direction of snake.
-    - If you dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word).
+    - If you dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word ).
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
 
 ## Subprogram
@@ -86,7 +86,7 @@ It also check if the snake has eat the cookie.
 ### checkover.m
 The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
 
-#### Attention
+## Attention
 If your subprogram has use any **`global`** variable, you should define it in both main and subprogram.
 
 ###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/)
