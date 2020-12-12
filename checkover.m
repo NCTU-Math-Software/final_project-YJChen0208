@@ -1,6 +1,7 @@
 function over = checkover()
-%   check if the snake has bump into itself
-% 
+% The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
+%
+
     global x;
     global y;
     

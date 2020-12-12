@@ -1,19 +1,20 @@
 function [x y]=go(w, h, gap)
-%   The output is the x y array that can be plot to display "GO!"
-%   The input has some restriction :
-%       h is the height of a word, it must be divided by 12.
-%       w is the width of a word, it must be divided by 2.
-%       gap is the gap between each words, it has no restriction.
+% The output is the `[x y]` array that can be plot to display "GO!".
 % 
-%   The total width of "GO!" is (w+gap)*2.
+% About input :
+% - Input `h` is the height of a word, it must be divided by 12.
+% - Input `w` is the width of a word, it must be divided by 2.
+% - Input `gap` is the gap between each words, it has no restriction.
 % 
-%   Example:
-%       You can get the return value by :
-%       > [x y] = gofunc(108, 200, 25);
-%       > [x y] = gofunc(20, 60, 10);
-%       and draw it by:
-%       > plot(x, y, '.r');
-%
+% The total width of "GO!" is `(w+gap)*2`.
+% 
+% Example:
+% You can get the return value by
+%   [x y] = go(108, 200, 25);
+%   [x y] = go(20, 60, 10);
+% and draw it by
+%   plot(x, y, '.r');
+% 
     
     % G
     x = [ones(1, h+1)*0];

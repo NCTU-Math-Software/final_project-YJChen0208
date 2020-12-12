@@ -1,8 +1,6 @@
 function snakemove()
-%   The function is use to control the move of snake
-%   according to `direc` variable, and also check if
-%   the snake has eat the cookie.
-%   The global variable must be define in main function too.
+% The function is use to control the move of snake according to `direc` variable by adjusting the `x` `y` value.
+% It also check if the snake has eat the cookie.
 %   
     global direc;
     global x;

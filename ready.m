@@ -1,18 +1,19 @@
 function [x y] = ready(w, h, gap)
-%   The output is the x y array that can be plot to display "READY?"
-%   The input has some restriction :
-%       h is the height of a word, it must be divided by 12.
-%       w is the width of a word, it must be divided by 2.
-%       gap is the gap between each words, it has no restriction.
+% The output is the `[x y]` array that can be plot to display "READY?".
 % 
-%   The total width of "READY?" is (w+gap)*5+w.
+% About input :
+% - Input `h` is the height of a word, it must be divided by 12.
+% - Input `w` is the width of a word, it must be divided by 2.
+% - Input `gap` is the gap between each words, it has no restriction.
 % 
-%   Example:
-%       You can get the return value by :
-%       > [x y] = readyfunc(108, 200, 25);
-%       > [x y] = readyfunc(20, 60, 10);
-%       and draw it by:
-%       > plot(x, y, '.r');
+% The total width of "READY?" is `(w+gap)*5+w`.
+% 
+% Example:
+% You can get the return value by
+%   [x y] = ready(108, 200, 25);
+%   [x y] = ready(20, 60, 10);
+% and draw it by
+%   plot(x, y, '.r');
 %
 
     % R

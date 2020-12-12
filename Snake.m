@@ -1,4 +1,14 @@
 function main()
+% 1. Show "READY?" in figure.
+% 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
+% 3. Show "GO!" in figure.
+% 4. Press `left mouse` and start playing, or press `right mouse` to exit.
+% 5. while playing :
+%     - You can use `arrow key` to control the direction of snake.
+%     - If you dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word).
+%     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
+% 
+
     global x;
     global y;
     global direc;
@@ -27,6 +37,8 @@ function main()
             clf();
             axis([0 width 0 height]);
             break;
+        elseif BUTTON == 3
+            return;
         end
     end
 
@@ -46,6 +58,8 @@ function main()
             clf();
             axis([0 width 0 height]);
             break;
+        elseif BUTTON == 3
+            return;
         end
     end
 
@@ -59,6 +73,8 @@ function main()
     direc = 4;
     speed = 0.3;
     cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
+    global stop;
+    stop = 0;
     
     while 1
         clf(); hold on;
@@ -72,6 +88,17 @@ function main()
         over = checkover();
         
         set(gcf,'KeyPressFcn', @kpfcn);
+        if direc == -1
+            return;
+        elseif stop == 1
+            while 1
+                [a,b,BUTTON] = ginput(1);
+                if BUTTON == 32
+                    stop = 0;
+                    break
+                end
+            end
+        end
         snakemove();
         
         if x(1)<0 || x(1)>width || y(1)<0 || y(1)>height

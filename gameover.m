@@ -1,19 +1,20 @@
 function [x y] = gameover(w, h, gap)
-%   The output is the x y array that can be plot to display "GAMEOVER"
-%   The input has some restriction :
-%       h is the height of a word, it must be divided by 2.
-%       w is the width of a word, it must be divided by 2.
-%       gap is the gap between each words, it has no restriction.
+% The output is the `[x y]` array that can be plot to display "GAMEOVER".
 % 
-%   The total width of "GAMEOVER!" is (w+gap)*7+w.
+% About input :
+% - Input `h` is the height of a word, it must be divided by 2.
+% - Input `w` is the width of a word, it must be divided by 2.
+% - Input `gap` is the gap between each words, it has no restriction.
 % 
-%   Example:
-%       You can get the return value by :
-%       > [x y] = gameover(108, 200, 25);
-%       > [x y] = gameover(18, 60, 5);
-%       and draw it by:
-%       > plot(x, y, '.r');
-%
+% The total width of "GAMEOVER" is `(w+gap)*7+w`.
+% 
+% Example:
+% You can get the return value by
+%   [x y] = gameover(108, 200, 25);
+%   [x y] = gameover(18, 60, 5);
+% and draw it by
+%   plot(x, y, '.r');
+% 
 
 
     % G
