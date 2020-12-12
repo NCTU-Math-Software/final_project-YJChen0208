@@ -1,7 +1,7 @@
 # 貪食蛇
 
 ## The main funtion of my project - `Snake.m`
-#### The process of it:
+### Procedure
 1. Show "READY?" in figure.
 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
 3. Show "GO!" in figure.
@@ -77,7 +77,7 @@ plot(x, y, '.r');
 
 ### kpfcn.m
 The function can change direction of snake according to your keypress.
-You can call `set(gcf,'KeyPressFcn', @kpfcn)` in your main function to change the variable `direc` by keypress.
+The main process call `set(gcf,'KeyPressFcn', @kpfcn)` in a while loop, and the variable `direc` will change if you press any `arrow key` while you are in that loop.
 
 ### snakemove.m
 The function is use to control the move of snake according to `direc` variable by adjusting the `x` `y` value.
@@ -87,6 +87,6 @@ It also check if the snake has eat the cookie.
 The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
 
 ## Attention
-If your subprogram has use any **`global`** variable, you should define it in both main and subprogram.
+If subprogram has use any **`global`** variable, it should be defined in both main and subprogram.
 
 ###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/)
