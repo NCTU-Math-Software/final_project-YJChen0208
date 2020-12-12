@@ -1,6 +1,7 @@
 # 貪食蛇
 
-## The process of main function - `Snake.m`
+## The main funtion of my project - `Snake.m`
+#### The process of it:
 1. Show "READY?" in figure.
 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
 3. Show "GO!" in figure.
@@ -9,7 +10,8 @@
     - You can use `arrow key` to control the direction of snake.
     - If you dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word).
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
-## Subfunction
+
+## Subprogram
 ### ready.m
 The output is the `[x y]` array that can be plot to display "READY?".
 
@@ -22,12 +24,12 @@ The total width of "READY?" is `(w+gap)*5+w`.
 
 #### Example:
 You can get the return value by
-```matlab
+``` matlab=
 [x y] = ready(108, 200, 25);
 [x y] = ready(20, 60, 10);
 ```
 and draw it by
-``` matlab
+``` matlab=
 plot(x, y, '.r');
 ```
 
@@ -43,14 +45,15 @@ The total width of "GO!" is `(w+gap)*2`.
 
 #### Example:
 You can get the return value by
-``` matlab
+``` matlab=
 [x y] = go(108, 200, 25);
 [x y] = go(20, 60, 10);
 ```
 and draw it by
-``` matlab
+``` matlab=
 plot(x, y, '.r');
 ```
+
 ### gameover.m
 The output is the `[x y]` array that can be plot to display "GAMEOVER".
 
@@ -63,12 +66,12 @@ The total width of "GAMEOVER" is `(w+gap)*7+w`.
 
 #### Example:
 You can get the return value by
-``` matlab
+``` matlab=
 [x y] = gameover(108, 200, 25);
 [x y] = gameover(18, 60, 5);
 ```
 and draw it by
-``` matlab
+``` matlab=
 plot(x, y, '.r');
 ```
 
@@ -83,6 +86,7 @@ It also check if the snake has eat the cookie.
 ### checkover.m
 The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
 
-
+#### Attention
+If your subprogram has use any **`global`** variable, you should define it in both main and subprogram.
 
 ###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/)
