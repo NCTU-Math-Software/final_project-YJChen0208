@@ -8,7 +8,7 @@
 4. Press `left mouse` and start playing, or press `right mouse` to exit.
 5. while playing :
     - You can use `arrow key` to control the direction of snake.
-    - If you dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word ).
+    - If the snake dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word ).
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
 
 ## Subprogram
