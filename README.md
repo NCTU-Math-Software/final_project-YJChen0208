@@ -12,12 +12,15 @@
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
 
 ## Subprogram
-### ready.m
+### `ready.m`
+```
+[x y] = ready(w, h, gap)
+```
 The output is the `[x y]` array that can be plot to display "READY?".
 
 About input :
-- Input `h` is the height of a word, it must be divided by 12.
 - Input `w` is the width of a word, it must be divided by 2.
+- Input `h` is the height of a word, it must be divided by 12.
 - Input `gap` is the gap between each words, it has no restriction.
 
 The total width of "READY?" is `(w+gap)*5+w`.
@@ -33,12 +36,15 @@ and draw it by
 plot(x, y, '.r');
 ```
 
-### go.m
+### `go.m`
+```
+[x y] = go(w, h, gap)
+```
 The output is the `[x y]` array that can be plot to display "GO!".
 
 About input :
-- Input `h` is the height of a word, it must be divided by 12.
 - Input `w` is the width of a word, it must be divided by 2.
+- Input `h` is the height of a word, it must be divided by 12.
 - Input `gap` is the gap between each words, it has no restriction.
 
 The total width of "GO!" is `(w+gap)*2`.
@@ -54,16 +60,18 @@ and draw it by
 plot(x, y, '.r');
 ```
 
-### gameover.m
+### `gameover.m`
+```
+[x y] = gameover(w, h, gap)
+```
 The output is the `[x y]` array that can be plot to display "GAMEOVER".
 
 About input :
-- Input `h` is the height of a word, it must be divided by 2.
 - Input `w` is the width of a word, it must be divided by 2.
+- Input `h` is the height of a word, it must be divided by 2.
 - Input `gap` is the gap between each words, it has no restriction.
 
 The total width of "GAMEOVER" is `(w+gap)*7+w`.
-
 #### Example:
 You can get the return value by
 ``` matlab=
@@ -75,15 +83,15 @@ and draw it by
 plot(x, y, '.r');
 ```
 
-### kpfcn.m
+### `kpfcn.m`
 The function can change direction of snake according to your keypress.
 The main process call `set(gcf,'KeyPressFcn', @kpfcn)` in a while loop, and the variable `direc` will change if you press any `arrow key` while you are in that loop.
 
-### snakemove.m
+### `snakemove.m`
 The function is use to control the move of snake according to `direc` variable by adjusting the `x` `y` value.
 It also check if the snake has eat the cookie.
 
-### checkover.m
+### `checkover.m`
 The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
 
 ## Attention
