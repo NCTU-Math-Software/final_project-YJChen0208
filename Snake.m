@@ -71,12 +71,15 @@ function main()
     y = [100 100 100 100];
     
     direc = 4;
-    speed = 0.3;
+    speed = 1;
     cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
     global stop;
     stop = 0;
+    global dirset;
+    
     
     while 1
+        dirset = 0;
         clf(); hold on;
         
         plot(bdyx, bdyy, '-k', 'LineWidth',3);
