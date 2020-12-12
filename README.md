@@ -94,7 +94,7 @@ It also check if the snake has eat the cookie.
 ### `checkover.m`
 The function is use to Check if the snake has bump into itself. If it has, return 1, if not, return 0.
 
-## Attention
+## Note
 If subprogram has use any **`global`** variable, it should be defined in both main and subprogram.
 
 ###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/)
