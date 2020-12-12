@@ -1,9 +1,9 @@
 # 貪食蛇
 
 ## The process of main function - `Snake.m`
-1. Show "ready" in figure.
+1. Show "READY?" in figure.
 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
-3. Show "go" in figure.
+3. Show "GO!" in figure.
 4. Press `left mouse` and start playing, or press `right mouse` to exit.
 5. while playing :
     - You can use `arrow key` to control the direction of snake.
@@ -22,12 +22,12 @@ The total width of "READY?" is `(w+gap)*5+w`.
 
 #### Example:
 You can get the return value by
-``` matlab=
+```matlab
 [x y] = ready(108, 200, 25);
 [x y] = ready(20, 60, 10);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
 
@@ -43,12 +43,12 @@ The total width of "GO!" is `(w+gap)*2`.
 
 #### Example:
 You can get the return value by
-``` matlab=
+``` matlab
 [x y] = go(108, 200, 25);
 [x y] = go(20, 60, 10);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
 ### gameover.m
@@ -63,12 +63,12 @@ The total width of "GAMEOVER" is `(w+gap)*7+w`.
 
 #### Example:
 You can get the return value by
-``` matlab=
+``` matlab
 [x y] = gameover(108, 200, 25);
 [x y] = gameover(18, 60, 5);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
 
