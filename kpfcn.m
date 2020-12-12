@@ -1,7 +1,7 @@
 function kpfcn(fig,event)
 %   The function can change direction of snake according to your keypress
 %   The global variable must be define in main function too.
-%   you call
+%   you can call
 %       set(gcf,'KeyPressFcn', @kpfcn);
 %   to change the variable `direc` by keypress in your main function.
 % 
