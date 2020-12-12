@@ -1,9 +1,9 @@
 # 貪食蛇
 
 ## The process of main function - `Snake.m`
-1. Show "ready" words.
+1. Show "ready" in figure.
 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
-3. Show "go" words
+3. Show "go" in figure.
 4. Press `left mouse` and start playing, or press `right mouse` to exit.
 5. while playing :
     - You can use `arrow key` to control the direction of snake.
@@ -11,14 +11,14 @@
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
 ## Subfunction
 ### ready.m
-The output is the x y array that can be plot to display "READY?".
+The output is the `[x y]` array that can be plot to display "READY?".
 
 About input :
-- Input h is the height of a word, it must be divided by 12.
-- Input w is the width of a word, it must be divided by 2.
-- Input gap is the gap between each words, it has no restriction.
+- Input `h` is the height of a word, it must be divided by 12.
+- Input `w` is the width of a word, it must be divided by 2.
+- Input `gap` is the gap between each words, it has no restriction.
 
-The total width of "READY?" is (w+gap)*5+w.
+The total width of "READY?" is `(w+gap)*5+w`.
 
 #### Example:
 You can get the return value by
@@ -32,14 +32,14 @@ plot(x, y, '.r');
 ```
 
 ### go.m
-The output is the x y array that can be plot to display "GO!".
+The output is the `[x y]` array that can be plot to display "GO!".
 
 About input :
-- Input h is the height of a word, it must be divided by 12.
-- Input w is the width of a word, it must be divided by 2.
-- Input gap is the gap between each words, it has no restriction.
+- Input `h` is the height of a word, it must be divided by 12.
+- Input `w` is the width of a word, it must be divided by 2.
+- Input `gap` is the gap between each words, it has no restriction.
 
-The total width of "GO!" is (w+gap)*2.
+The total width of "GO!" is `(w+gap)*2`.
 
 #### Example:
 You can get the return value by
@@ -52,14 +52,14 @@ and draw it by
 plot(x, y, '.r');
 ```
 ### gameover.m
-The output is the x y array that can be plot to display "GAMEOVER".
+The output is the `[x y]` array that can be plot to display "GAMEOVER".
 
 About input :
-- Input h is the height of a word, it must be divided by 2.
-- Input w is the width of a word, it must be divided by 2.
-- Input gap is the gap between each words, it has no restriction.
+- Input `h` is the height of a word, it must be divided by 2.
+- Input `w` is the width of a word, it must be divided by 2.
+- Input `gap` is the gap between each words, it has no restriction.
 
-The total width of "GAMEOVER!" is (w+gap)*7+w.
+The total width of "GAMEOVER" is `(w+gap)*7+w`.
 
 #### Example:
 You can get the return value by
@@ -74,10 +74,10 @@ plot(x, y, '.r');
 
 ### kpfcn.m
 The function can change direction of snake according to your keypress.
-You can call `set(gcf,'KeyPressFcn', @kpfcn);` in your main function to change the variable `direc` by keypress.
+You can call `set(gcf,'KeyPressFcn', @kpfcn)` in your main function to change the variable `direc` by keypress.
 
 ### snakemove.m
-The function is use to control the move of snake according to `direc` variable by adjusting the x y value.
+The function is use to control the move of snake according to `direc` variable by adjusting the `x` `y` value.
 It also check if the snake has eat the cookie.
 
 ### checkover.m
