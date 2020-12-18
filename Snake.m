@@ -26,6 +26,7 @@ function Snake()
     y = y + 70;
     plot(bdyx, bdyy, '-k', 'LineWidth',3); hold on;
     plot(x, y, '.r', 'MarkerSize', 15);
+    title('Press right buttom to start, or left to exit.');
     axis([0 width 0 height]);
     
     while 1
@@ -47,6 +48,7 @@ function Snake()
     y = y+70;
     plot(bdyx, bdyy, '-k', 'LineWidth',3); hold on;
     plot(x, y, '.r', 'MarkerSize', 15);
+    title('Press right buttom to start, or left to exit.');
     axis([0 width 0 height]);
 
     while 1
@@ -79,6 +81,7 @@ function Snake()
     speed = 0.01;
     geneCookie();
     stop = 0;
+    cookieCnt = 0;
 
     while 1
         dirset = 0;
@@ -87,6 +90,7 @@ function Snake()
             bb = oldy(size(oldy, 2));
             oldx = [oldx aa];
             oldy = [oldy bb];
+            
         end
         for a=1:10
             clf(); hold on;
@@ -96,10 +100,12 @@ function Snake()
             plot(plotx(2:size(x,2)), ploty(2:size(x,2)), '.k', 'MarkerSize', 30, 'LineWidth', 3);
             plot(plotx(1), ploty(1), '.k', 'MarkerSize', 50, 'LineWidth', 4);
             plot(bdyx, bdyy, '-k', 'LineWidth',3);
+            title(['Score: ', num2str(cookieCnt)]);
             
             axis([0 width 0 height]);
             if eat == 1 && a == 7
                 geneCookie();
+                cookieCnt = cookieCnt+1;
             end
             pause(speed);
         end
