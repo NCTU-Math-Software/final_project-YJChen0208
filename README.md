@@ -105,7 +105,7 @@ The total width of "STOP" is `(w+gap)*3+w`.
 #### Example:
 You can get the return value by
 ``` matlab
-[x, y] = gameover(18, 60, 5);
+[x, y] = stopword(18, 60, 5);
 ```
 and draw it by
 ``` matlab
