@@ -1,4 +1,4 @@
-function snakemove()
+function eat = snakemove()
 % The function is use to control the move of snake according to `direc` variable by adjusting the `x` `y` value.
 % It also check if the snake has eat the cookie.
 %   
@@ -25,8 +25,10 @@ function snakemove()
         s = size(x,2);
         x(s) = [];
         y(s) = [];
+        eat = 0;
     else
 %       Snake eat cookie, add a new cookie
         cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
+        eat = 1;
     end
 end

@@ -22,7 +22,7 @@ function main()
     axis([0 width 0 height]);
     
     %%  READY ?
-    [x y] = ready(20, 60, 10);
+    [x, y] = ready(20, 60, 10);
     x = x + 15;
     y = y + 70;
     plot(bdyx, bdyy, '-k', 'LineWidth',3); hold on;
@@ -30,7 +30,7 @@ function main()
     axis([0 width 0 height]);
     
     while 1
-        [a,b,BUTTON] = ginput(1);
+        [a, b, BUTTON] = ginput(1);
         if BUTTON == 1
             x = [];
             y = [];
@@ -43,7 +43,7 @@ function main()
     end
 
     %% GO!
-    [x y] = go(20, 60, 10);
+    [x, y] = go(20, 60, 10);
     x = x+70;
     y = y+70;
     plot(bdyx, bdyy, '-k', 'LineWidth',3); hold on;
@@ -51,7 +51,7 @@ function main()
     axis([0 width 0 height]);
 
     while 1
-        [a,b,BUTTON] = ginput(1);
+        [a, b, BUTTON] = ginput(1);
         if BUTTON == 1
             x = [];
             y = [];
@@ -69,52 +69,83 @@ function main()
 %     y = [100 110 110 100 100 100 100];
     x = [ 80  70  60  50];
     y = [100 100 100 100];
+    oldx = x;
+    oldy = y;
+    eat = 0;
     
     direc = 4;
-    speed = 1;
+    speed = 0.01;
     cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
     global stop;
     stop = 0;
     global dirset;
     
+%     cookie = [ 100 100 ];
     
     while 1
         dirset = 0;
-        clf(); hold on;
-        
-        plot(bdyx, bdyy, '-k', 'LineWidth',3);
-        plot(x, y, '.-k', 'MarkerSize', 30, 'LineWidth',3);
-        plot(x(1), y(1), '.k', 'MarkerSize', 40);
-        plot(cookie(1), cookie(2), '.r', 'MarkerSize', 30);
-        axis([0 width 0 height]);
-        
-        over = checkover();
-        
-        set(gcf,'KeyPressFcn', @kpfcn);
-        if direc == -1
-            return;
-        elseif stop == 1
-            while 1
-                [a,b,BUTTON] = ginput(1);
-                if BUTTON == 32
-                    stop = 0;
-                    break
-                end
-            end
+        if eat == 1
+            aa = oldx(size(oldx, 2));
+            bb = oldy(size(oldy, 2));
+            oldx = [oldx aa];
+            oldy = [oldy bb];
         end
-        snakemove();
+        for a=1:10
+            clf(); hold on;
+            xsize = size(x, 2)-1;
+            t = 0 : xsize;
+            plotx = (x-oldx)*a/10+oldx;
+            ploty = (y-oldy)*a/10+oldy;
+            px = polyfit(t, plotx, xsize);
+            py = polyfit(t, ploty, xsize);
+            tt = linspace(0, xsize);
+            fx = polyval(px, tt);
+            fy = polyval(py, tt);
+            plot(fx, fy, '-k', 'MarkerSize', 30, 'LineWidth',3);
+            plot(plotx(2:size(x,2)), ploty(2:size(x,2)), '.k', 'MarkerSize', 30, 'LineWidth', 3);
+            plot(plotx(1), ploty(1), '.k', 'MarkerSize', 50, 'LineWidth', 4);
+            plot(bdyx, bdyy, '-k', 'LineWidth',3);
+            plot(cookie(1), cookie(2), '.r', 'MarkerSize', 30);
+
+            axis([0 width 0 height]);
+            pause(speed);
+        end
         
-        if x(1)<0 || x(1)>width || y(1)<0 || y(1)>height
+        % check gameover
+        over = checkover();
+        if x(1)<=0 || x(1)>=width || y(1)<=0 || y(1)>=height
             over = 1;
         end
         if over == 1
-            [a b] = gameover(18, 60, 5);
+            [a, b] = gameover(18, 60, 5);
             a = a+10.5;
             b = b+70;
             plot(a, b, '.r', 'MarkerSize', 15);
             break;
         end
-        pause(speed);
+        
+        % get keypress and move snake
+        set(gcf,'KeyPressFcn', @kpfcn);
+        if direc == -1
+            return;
+        elseif stop == 1
+            [stopx, stopy] = stopword(20, 60, 10);
+            stopx = stopx+45;
+            stopy = stopy+70;
+            plot(stopx, stopy, '.g', 'MarkerSize', 15);
+            while 1
+                [a, b, BUTTON] = ginput(1);
+                if BUTTON == 32 % press SPACE
+                    stop = 0;
+                    break
+                elseif BUTTON == 99 % press C
+                    return;
+                end
+            end
+        end
+        oldx = x;
+        oldy = y;
+        eat = snakemove();
     end
 end
 
