@@ -11,8 +11,7 @@ function main()
 
     global x;
     global y;
-    global direc;
-    global cookie;
+
     
 	width = 200;
     height = 200;
@@ -64,7 +63,11 @@ function main()
     end
 
     %% start playing
-
+    global stop;
+    global dirset;
+    global direc;
+    global cookie;
+    
 %     x = [ 70  70  80  80  70  60  50];
 %     y = [100 110 110 100 100 100 100];
     x = [ 80  70  60  50];
@@ -72,16 +75,11 @@ function main()
     oldx = x;
     oldy = y;
     eat = 0;
-    
     direc = 4;
     speed = 0.01;
-    cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
-    global stop;
+    geneCookie();
     stop = 0;
-    global dirset;
-    
-%     cookie = [ 100 100 ];
-    
+
     while 1
         dirset = 0;
         if eat == 1
@@ -92,22 +90,17 @@ function main()
         end
         for a=1:10
             clf(); hold on;
-            xsize = size(x, 2)-1;
-            t = 0 : xsize;
-            plotx = (x-oldx)*a/10+oldx;
-            ploty = (y-oldy)*a/10+oldy;
-            px = polyfit(t, plotx, xsize);
-            py = polyfit(t, ploty, xsize);
-            tt = linspace(0, xsize);
-            fx = polyval(px, tt);
-            fy = polyval(py, tt);
+            [fx, fy, plotx, ploty] = calpol(oldx, oldy, a);
+            plot(cookie(1), cookie(2), '.r', 'MarkerSize', 30);
             plot(fx, fy, '-k', 'MarkerSize', 30, 'LineWidth',3);
             plot(plotx(2:size(x,2)), ploty(2:size(x,2)), '.k', 'MarkerSize', 30, 'LineWidth', 3);
             plot(plotx(1), ploty(1), '.k', 'MarkerSize', 50, 'LineWidth', 4);
             plot(bdyx, bdyy, '-k', 'LineWidth',3);
-            plot(cookie(1), cookie(2), '.r', 'MarkerSize', 30);
-
+            
             axis([0 width 0 height]);
+            if eat == 1 && a == 7
+                geneCookie();
+            end
             pause(speed);
         end
         
@@ -135,10 +128,12 @@ function main()
             plot(stopx, stopy, '.g', 'MarkerSize', 15);
             while 1
                 [a, b, BUTTON] = ginput(1);
-                if BUTTON == 32 % press SPACE
+                if BUTTON == 32
+                    % press SPACE
                     stop = 0;
                     break
-                elseif BUTTON == 99 % press C
+                elseif BUTTON == 99
+                    % press C
                     return;
                 end
             end

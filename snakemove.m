@@ -27,8 +27,6 @@ function eat = snakemove()
         y(s) = [];
         eat = 0;
     else
-%       Snake eat cookie, add a new cookie
-        cookie = [int32(rand(1)*18)*10+10 int32(rand(1)*18)*10+10];
         eat = 1;
     end
 end
