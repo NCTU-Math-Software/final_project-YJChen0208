@@ -1,4 +1,4 @@
-function main()
+function Snake()
 % 1. Show "READY?" in figure.
 % 2. Press `left mouse` if you are ready, or press `right mouse` to exit.
 % 3. Show "GO!" in figure.
@@ -36,7 +36,7 @@ function main()
             clf();
             axis([0 width 0 height]);
             break;
-        elseif BUTTON == 3
+        elseif BUTTON == 3 || BUTTON == 99
             return;
         end
     end
@@ -57,7 +57,7 @@ function main()
             clf();
             axis([0 width 0 height]);
             break;
-        elseif BUTTON == 3
+        elseif BUTTON == 3 || BUTTON == 99
             return;
         end
     end
