@@ -1,14 +1,21 @@
 # 貪食蛇
 
 ## The main funtion of my project - `Snake.m`
+### How to Run
+1. Download all file in a folder
+2. use MATLAB to run `Snake.m` **(MATLAB Version 2019b)**
+    ``` matlab
+    >> Snake()
+    ```
+
 ### Procedure
 1. Show "READY?" in figure.
-2. Press `left mouse` if you are ready, or press `right mouse` to exit.
-3. Show "GO!" in figure.
-4. Press `left mouse` and start playing, or press `right mouse` to exit.
+Press `left mouse` if you are ready, or press `right mouse` or `C` to exit.
+2. Show "GO!" in figure.
+Press `left mouse` and start playing, or press `right mouse` or `C` to exit.
 5. while playing :
-    - You can use `arrow key` to control the direction of snake.
-    - If the snake dump into itself or out of the boundary, you lose the game ( the figure will show "GAMEOVER" word ).
+    - You can use `arrow key` to control the direction of snake and eat cookie, the score will show on the top of figure.
+    - If the snake dump into itself or out of the boundary, you lose the game and the figure will show "GAMEOVER" word.
     - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
 
 ## Subprogram
@@ -27,12 +34,12 @@ The total width of "READY?" is `(w+gap)*5+w`.
 
 #### Example:
 You can get the return value by
-``` matlab=
+``` matlab
 [x y] = ready(108, 200, 25);
 [x y] = ready(20, 60, 10);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
 
@@ -51,12 +58,12 @@ The total width of "GO!" is `(w+gap)*2`.
 
 #### Example:
 You can get the return value by
-``` matlab=
+``` matlab
 [x y] = go(108, 200, 25);
 [x y] = go(20, 60, 10);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
 
@@ -74,14 +81,44 @@ About input :
 The total width of "GAMEOVER" is `(w+gap)*7+w`.
 #### Example:
 You can get the return value by
-``` matlab=
+``` matlab
 [x y] = gameover(108, 200, 25);
 [x y] = gameover(18, 60, 5);
 ```
 and draw it by
-``` matlab=
+``` matlab
 plot(x, y, '.r');
 ```
+
+### `stopword.m`
+```matlab
+[x y] = stopword(w, h, gap)
+```
+The output is the `[x y]` array that can be plot to display "STOP".
+About input :
+- Input `w` is the width of a word, it must be divided by 2.
+- Input `h` is the height of a word, it must be divided by 2.
+- Input `gap` is the gap between each words, it has no restriction.
+
+The total width of "STOP" is `(w+gap)*3+w`.
+#### Example:
+You can get the return value by
+``` matlab
+[x, y] = gameover(18, 60, 5);
+```
+and draw it by
+``` matlab
+plot(x, y, '.r');
+```
+
+### `calpol.m`
+```
+[fx, fy, plotx, ploty] = calpol(oldx, oldy, a)
+```
+將舊的位置與新的位置之間分割成10份，計算出與第 a 份 (`[plotx, ploty]`) 的點最符合的曲線 (`[fx, fy]`)。
+
+### `geneCookie.m`
+Create a cookie and make it away from snake.
 
 ### `kpfcn.m`
 The function can change direction of snake according to your keypress.
