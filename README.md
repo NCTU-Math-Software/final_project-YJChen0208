@@ -95,6 +95,7 @@ plot(x, y, '.r');
 [x y] = stopword(w, h, gap)
 ```
 The output is the `[x y]` array that can be plot to display "STOP".
+
 About input :
 - Input `w` is the width of a word, it must be divided by 2.
 - Input `h` is the height of a word, it must be divided by 2.
@@ -134,4 +135,4 @@ The function is use to Check if the snake has bump into itself. If it has, retur
 ## Note
 If subprogram has use any **`global`** variable, it should be defined in both main and subprogram.
 
-###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/)
+###### Reference : [多重案件處理](https://yuchungchuang.wordpress.com/2017/08/07/matlab-%E5%A4%9A%E9%87%8D%E6%8C%89%E9%8D%B5%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%99%95%E7%90%86keypressfcn/), chebsnake
