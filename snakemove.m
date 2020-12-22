@@ -20,11 +20,10 @@ function eat = snakemove()
         x = [x(1)+10 x];
         y = [y(1) y];
     end
+    s = size(x,2);
+    x(s) = [];
+    y(s) = [];
     if ( x(1) ~= cookie(1) || y(1) ~= cookie(2) )
-%       snake didnt eat cookie so delete last position
-        s = size(x,2);
-        x(s) = [];
-        y(s) = [];
         eat = 0;
     else
         eat = 1;

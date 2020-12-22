@@ -82,16 +82,10 @@ function Snake()
     geneCookie();
     stop = 0;
     cookieCnt = 0;
-
+    warning off;
+    
     while 1
         dirset = 0;
-        if eat == 1
-            aa = oldx(size(oldx, 2));
-            bb = oldy(size(oldy, 2));
-            oldx = [oldx aa];
-            oldy = [oldy bb];
-            
-        end
         for a=1:10
             clf(); hold on;
             [fx, fy, plotx, ploty] = calpol(oldx, oldy, a);
@@ -104,12 +98,17 @@ function Snake()
             
             axis([0 width 0 height]);
             if eat == 1 && a == 7
+                aa = oldx(size(oldx, 2));
+                bb = oldy(size(oldy, 2));
+                x = [x aa];
+                y = [y bb];
+                oldx = [oldx aa];
+                oldy = [oldy bb];
                 geneCookie();
                 cookieCnt = cookieCnt+1;
             end
             pause(speed);
         end
-        
         % check gameover
         over = checkover();
         if x(1)<=0 || x(1)>=width || y(1)<=0 || y(1)>=height
