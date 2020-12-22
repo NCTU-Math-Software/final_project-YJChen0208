@@ -114,7 +114,7 @@ You can get the return value by
 ```
 and draw it by
 ``` matlab
-plot(x, y, '.r');
+plot(x, y, '.g');
 ```
 
 ### `calpol.m`
