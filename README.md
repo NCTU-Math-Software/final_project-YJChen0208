@@ -7,6 +7,7 @@
     ``` matlab
     >> Snake()
     ```
+3. Press `C` to exit.
 
 ### Procedure
 1. Show "READY?" in figure.
@@ -16,7 +17,7 @@ Press `left mouse` and start playing, or press `right mouse` or `C` to exit.
 5. while playing :
     - You can use `arrow key` to control the direction of snake and eat cookie, the score will show on the top of figure.
     - If the snake dump into itself or out of the boundary, you lose the game and the figure will show "GAMEOVER" word.
-    - You can press `c` to exit the game, or press `space` to stop, press `space` again to continue the game.
+    - You can press `C` to exit the game, or press `space` to stop, press `space` again to continue the game.
 
 ## Subprogram
 ### `ready.m`
@@ -24,6 +25,7 @@ Press `left mouse` and start playing, or press `right mouse` or `C` to exit.
 [x y] = ready(w, h, gap)
 ```
 The output is the `[x y]` array that can be plot to display "READY?".
+![](https://i.imgur.com/YusBVCr.png)
 
 About input :
 - Input `w` is the width of a word, it must be divided by 2.
@@ -48,6 +50,7 @@ plot(x, y, '.r');
 [x y] = go(w, h, gap)
 ```
 The output is the `[x y]` array that can be plot to display "GO!".
+![](https://i.imgur.com/xRBaNnY.png)
 
 About input :
 - Input `w` is the width of a word, it must be divided by 2.
@@ -72,6 +75,7 @@ plot(x, y, '.r');
 [x y] = gameover(w, h, gap)
 ```
 The output is the `[x y]` array that can be plot to display "GAMEOVER".
+![](https://i.imgur.com/0cXApl0.png)
 
 About input :
 - Input `w` is the width of a word, it must be divided by 2.
@@ -95,6 +99,7 @@ plot(x, y, '.r');
 [x y] = stopword(w, h, gap)
 ```
 The output is the `[x y]` array that can be plot to display "STOP".
+![](https://i.imgur.com/OOc4gfd.png)
 
 About input :
 - Input `w` is the width of a word, it must be divided by 2.
